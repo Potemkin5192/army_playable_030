@@ -6166,18 +6166,22 @@ if (reversed == null) { reversed = false; }
 			}
 		}
 		function openCard1() {
-			soldier1.arrow.visible = false;
-			if (s1card.alpha <= 0) {
-				soldier2.visible = false;
-				s1card.scaleX = cardscaleLow;
-				createjs.Tween.get(s1card).to({alpha:1, scaleX: cardstartScaleX}, 400, createjs.Ease.cubicOut).call(switches1Clickable);
+			if (!isTraining) {
+				soldier1.arrow.visible = false;
+				if (s1card.alpha <= 0) {
+					soldier2.visible = false;
+					s1card.scaleX = cardscaleLow;
+					createjs.Tween.get(s1card).to({alpha:1, scaleX: cardstartScaleX}, 400, createjs.Ease.cubicOut).call(switches1Clickable);
+				}
 			}
 		}
 		function openCard2() {
-			soldier1.arrow.visible = false;
-			if (s2card.alpha <= 0) {
-				s2card.scaleX = cardscaleLow;
-				createjs.Tween.get(s2card).to({alpha:1, scaleX: cardstartScaleX}, 400, createjs.Ease.cubicOut).call(switches2Clickable);
+			if (!isTraining) {
+				soldier1.arrow.visible = false;
+				if (s2card.alpha <= 0) {
+					s2card.scaleX = cardscaleLow;
+					createjs.Tween.get(s2card).to({alpha:1, scaleX: cardstartScaleX}, 400, createjs.Ease.cubicOut).call(switches2Clickable);
+				}
 			}
 		}
 		function closeCard2() {
