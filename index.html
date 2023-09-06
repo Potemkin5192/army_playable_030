@@ -6145,6 +6145,8 @@ if (reversed == null) { reversed = false; }
 		var cardstartScaleX = s1card.scaleX;
 		s2infobtn.addEventListener('click', openCard2);
 		s2cardclose.addEventListener('click', closeCard2);
+		s1infobtn.clickable = true;
+		s2infobtn.clickable = true;
 		s1card.arrow_close.visible = false;
 		s2card.arrow_close.visible = false;
 		var isShootTrainingOn = false;
@@ -6166,17 +6168,19 @@ if (reversed == null) { reversed = false; }
 			}
 		}
 		function openCard1() {
-			if (!isTraining) {
+			if (s1infobtn.clickable) {
+				s2infobtn.clickable = false;
 				soldier1.arrow.visible = false;
 				if (s1card.alpha <= 0) {
 					soldier2.visible = false;
 					s1card.scaleX = cardscaleLow;
 					createjs.Tween.get(s1card).to({alpha:1, scaleX: cardstartScaleX}, 400, createjs.Ease.cubicOut).call(switches1Clickable);
 				}
-			}
+			}	
 		}
 		function openCard2() {
-			if (!isTraining) {
+			if (s2infobtn.clickable) {
+				s1infobtn.clickable = false;
 				soldier1.arrow.visible = false;
 				if (s2card.alpha <= 0) {
 					s2card.scaleX = cardscaleLow;
@@ -6418,10 +6422,16 @@ if (reversed == null) { reversed = false; }
 			isTraining = false;
 		});
 		function closeCard1Finally() {
+			if (s2card.currentFrame < 20) {
+				s2infobtn.clickable = true;
+			}
 			soldier2.visible = true;
 			createjs.Tween.get(s1card).to({alpha:0, scaleX: cardscaleLow}, 400, createjs.Ease.cubicIn);
 		}
 		function closeCard2Finally() {
+			if (s1card.currentFrame < 20) {
+				s1infobtn.clickable = true;
+			}
 			soldier1.visible = true;
 			createjs.Tween.get(s2card).to({alpha:0, scaleX: cardscaleLow}, 400, createjs.Ease.cubicIn);
 		}
@@ -6501,8 +6511,8 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"index_atlas_P_1.png?1694002974227", id:"index_atlas_P_1"},
-		{src:"index_atlas_NP_1.jpg?1694002974227", id:"index_atlas_NP_1"}
+		{src:"index_atlas_P_1.png?1694004220664", id:"index_atlas_P_1"},
+		{src:"index_atlas_NP_1.jpg?1694004220665", id:"index_atlas_NP_1"}
 	],
 	preloads: []
 };
