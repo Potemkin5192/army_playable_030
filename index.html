@@ -6026,8 +6026,8 @@ if (reversed == null) { reversed = false; }
 			centerY = document.documentElement.clientHeight * .5;
 			//mainScaleByX = document.documentElement.clientWidth / (document.documentElement.clientWidth * .8);
 			//mainScaleByY = document.documentElement.clientHeight / (document.documentElement.clientHeight * 1.4);
-			mainScaleByX = document.documentElement.clientWidth / document.documentElement.clientHeight
-			mainScaleByY = document.documentElement.clientHeight / document.documentElement.clientWidth
+			mainScaleByX = document.documentElement.clientWidth / (document.documentElement.clientHeight * 2);
+			mainScaleByY = document.documentElement.clientHeight / (document.documentElement.clientWidth * 2);
 			if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
 				main.setTransform(centerX, centerY, mainScaleByX, mainScaleByX);
 				startbtn.setTransform(centerX, centerY * 3, mainScaleByX, mainScaleByX);
