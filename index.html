@@ -6024,8 +6024,10 @@ if (reversed == null) { reversed = false; }
 		function onResize(event) {
 			centerX = document.documentElement.clientWidth * .5;
 			centerY = document.documentElement.clientHeight * .5;
-			mainScaleByX = document.documentElement.clientWidth / (document.documentElement.clientWidth * .8);
-			mainScaleByY = document.documentElement.clientHeight / (document.documentElement.clientHeight * 1.4);
+			//mainScaleByX = document.documentElement.clientWidth / (document.documentElement.clientWidth * .8);
+			//mainScaleByY = document.documentElement.clientHeight / (document.documentElement.clientHeight * 1.4);
+			mainScaleByX = document.documentElement.clientWidth / document.documentElement.clientHeight
+			mainScaleByY = document.documentElement.clientHeight / document.documentElement.clientWidth
 			if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
 				main.setTransform(centerX, centerY, mainScaleByX, mainScaleByX);
 				startbtn.setTransform(centerX, centerY * 3, mainScaleByX, mainScaleByX);
@@ -6035,10 +6037,11 @@ if (reversed == null) { reversed = false; }
 			}
 			if (document.documentElement.clientWidth > document.documentElement.clientHeight || document.documentElement.clientWidth == document.documentElement.clientHeight) {
 				main.setTransform(centerX, centerY, mainScaleByY, mainScaleByY);
-				startbtn.setTransform(centerX, centerY * 3, mainScaleByY * .75, mainScaleByY * .75);
-				startbtn2.setTransform(centerX, centerY * 3, mainScaleByY * .75, mainScaleByY * .75);
-				packshot.setTransform(centerX, centerY, mainScaleByY, mainScaleByY);
-				sCounter.setTransform(centerX, 0, mainScaleByY * 2, mainScaleByY * 2);
+				//if (document.documentElement.clientWidth/document.documentElement.clientHeight > )
+				startbtn.setTransform(main.x, centerY * 3, mainScaleByY * .75, mainScaleByY * .75);
+				startbtn2.setTransform(main.x, centerY * 3, mainScaleByY * .75, mainScaleByY * .75);
+				packshot.setTransform(main.x, main.y, mainScaleByY, mainScaleByY);
+				sCounter.setTransform(main.x, 0, mainScaleByY * 2, mainScaleByY * 2);
 			}
 			resizeCanvas(canvas, ctx, document.documentElement.clientWidth, document.documentElement.clientHeight);
 		}
