@@ -6006,10 +6006,10 @@ if (reversed == null) { reversed = false; }
 		window.addEventListener('upgrade', function () {
 			upgrade.play();
 		});
-		var centerX = document.documentElement.clientWidth * .5;
-		var centerY = document.documentElement.clientHeight * .5;
-		var mainScaleByX = document.documentElement.clientWidth / (document.documentElement.clientWidth * .7);
-		var mainScaleByY = document.documentElement.clientHeight / (document.documentElement.clientHeight * .8);
+		var centerX = 1;
+		var centerY = 1;
+		var mainScaleByX = 1;
+		var mainScaleByY = 1;
 		function resizeCanvas(canvas, context, width, height) {
 			var tmpCanvas = document.createElement('canvas');
 			tmpCanvas.width = context.canvas.width;
@@ -6022,26 +6022,30 @@ if (reversed == null) { reversed = false; }
 		}
 		window.addEventListener('resize', onResize);
 		function onResize(event) {
+			console.log('Width = ' + document.documentElement.clientWidth);
+			console.log('height = ' + document.documentElement.clientHeight);
 			centerX = document.documentElement.clientWidth * .5;
 			centerY = document.documentElement.clientHeight * .5;
 			//mainScaleByX = document.documentElement.clientWidth / (document.documentElement.clientWidth * .8);
 			//mainScaleByY = document.documentElement.clientHeight / (document.documentElement.clientHeight * 1.4);
-			mainScaleByX = document.documentElement.clientWidth / (document.documentElement.clientHeight * .3);
-			mainScaleByY = document.documentElement.clientHeight / (document.documentElement.clientWidth * .4);
+			mainScaleByX = document.documentElement.clientWidth / (document.documentElement.clientHeight * .2);
+			mainScaleByY = document.documentElement.clientHeight / (document.documentElement.clientWidth * .8);
 			if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
 				main.setTransform(centerX, centerY, mainScaleByX, mainScaleByX);
 				startbtn.setTransform(centerX, centerY * 3, mainScaleByX, mainScaleByX);
 				startbtn2.setTransform(centerX, centerY * 3, mainScaleByX, mainScaleByX);
 				packshot.setTransform(centerX, centerY, mainScaleByX, mainScaleByX);
 				sCounter.setTransform(centerX, 0, mainScaleByX* 2, mainScaleByX* 2);
+				console.log(mainScaleByX);
 			}
 			if (document.documentElement.clientWidth > document.documentElement.clientHeight || document.documentElement.clientWidth == document.documentElement.clientHeight) {
 				main.setTransform(centerX, centerY, mainScaleByY, mainScaleByY);
-				//if (document.documentElement.clientWidth/document.documentElement.clientHeight > )
-				startbtn.setTransform(main.x, centerY * 3, mainScaleByY * .75, mainScaleByY * .75);
-				startbtn2.setTransform(main.x, centerY * 3, mainScaleByY * .75, mainScaleByY * .75);
-				packshot.setTransform(main.x, main.y, mainScaleByY, mainScaleByY);
-				sCounter.setTransform(main.x, 0, mainScaleByY * 2, mainScaleByY * 2);
+				//if (document.documentElement.clientWidth/document.documentElement.clientHeight > 2)
+				startbtn.setTransform(centerX, centerY * 3, mainScaleByY * .75, mainScaleByY * .75);
+				startbtn2.setTransform(centerX, centerY * 3, mainScaleByY * .75, mainScaleByY * .75);
+				packshot.setTransform(centerX, centerX, mainScaleByY, mainScaleByY);
+				sCounter.setTransform(centerX, 0, mainScaleByY * 2, mainScaleByY * 2);
+				console.log(mainScaleByY);
 			}
 			resizeCanvas(canvas, ctx, document.documentElement.clientWidth, document.documentElement.clientHeight);
 		}
