@@ -6354,6 +6354,9 @@ if (reversed == null) { reversed = false; }
 				sCounter.gotoAndStop(2);
 				car.gotoAndPlay(4);
 			}
+			if (deserted == 1 && car.currentFrame != 0) {
+				packshot.gotoAndPlay(137);
+			}
 			console.log('soldierAddedToCar');
 		})
 		window.addEventListener('victory', function () {
@@ -6923,10 +6926,11 @@ if (reversed == null) { reversed = false; }
 			s1_box.gotoAndStop(0);
 			deserted++;
 		});
-		window.addEventListener('both_deserted', function () {
+		window.addEventListener('both_deserted', bothDeserted)
+		function bothDeserted() {
 			if (deserted >= 2) {
 				packshot.gotoAndPlay(137);
-			} else if (deserted < 2 && car.currentFrame != 0) {
+			} else if (deserted == 1 && car.currentFrame != 0) {
 				packshot.gotoAndPlay(137);
 			}
 		})
