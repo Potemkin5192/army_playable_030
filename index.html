@@ -6227,7 +6227,7 @@ if (reversed == null) { reversed = false; }
 			}
 		});
 		var startbtnBaseY = startbtn.y;
-		var startbtnTargetY = document.documentElement.clientHeight * .25;
+		var startbtnTargetY = document.documentElement.clientHeight * .85;
 		function showStartBtn() {
 			if (sCounter.alpha < 1) {
 				createjs.Tween.get(sCounter).to({alpha:1}, 650, createjs.Ease.cubicOut);
@@ -6275,6 +6275,9 @@ if (reversed == null) { reversed = false; }
 				s1_box_switch.gotoAndStop(0);
 				s1_box.visible = true;
 				s1_box.gotoAndPlay(1);
+				if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
+					createjs.Tween.get(main).to({x:centerX+centerX/2}, 725, createjs.Ease.cubicInOut);
+				}
 			} else if (isRunTrainingOn) {
 				s1_waving.visible = false;
 				s1_run_switch.gotoAndStop(0);
@@ -6347,6 +6350,9 @@ if (reversed == null) { reversed = false; }
 				s2_box_switch.gotoAndStop(0);
 				s2_box.visible = true;
 				s2_box.gotoAndPlay(1);
+				if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
+					createjs.Tween.get(main).to({x:centerX+centerX/2}, 725, createjs.Ease.cubicInOut);
+				}
 			}
 		}
 		window.addEventListener('no_trainings', function () {
