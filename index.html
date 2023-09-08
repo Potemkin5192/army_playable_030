@@ -6040,7 +6040,7 @@ if (reversed == null) { reversed = false; }
 				main.setTransform(centerX, centerY, mainScaleByX, mainScaleByX);
 				startbtn.setTransform(centerX, centerY * 3, mainScaleByX, mainScaleByX);
 				startbtn2.setTransform(centerX, centerY * 3, mainScaleByX, mainScaleByX);
-				packshot.setTransform(centerX, centerY, mainScaleByX, mainScaleByX);
+				packshot.setTransform(centerX, centerY, mainScaleByX *.8, mainScaleByX *.8);
 				sCounter.setTransform(centerX, 0, mainScaleByX * 2, mainScaleByX * 2);
 				console.log(mainScaleByX);
 			}
@@ -6048,7 +6048,7 @@ if (reversed == null) { reversed = false; }
 				main.setTransform(centerX, centerY, mainScaleByY, mainScaleByY);
 				startbtn.setTransform(centerX, centerY * 3, mainScaleByY * .75, mainScaleByY * .75);
 				startbtn2.setTransform(centerX, centerY * 3, mainScaleByY * .75, mainScaleByY * .75);
-				packshot.setTransform(centerX, centerX, mainScaleByY, mainScaleByY);
+				packshot.setTransform(centerX, centerY, mainScaleByY, mainScaleByY);
 				sCounter.setTransform(centerX, 0, mainScaleByY * 2, mainScaleByY * 2);
 				console.log(mainScaleByY);
 			}
