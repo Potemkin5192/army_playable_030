@@ -6026,12 +6026,12 @@ if (reversed == null) { reversed = false; }
 			console.log('height = ' + document.documentElement.clientHeight);
 			centerX = document.documentElement.clientWidth * .5;
 			centerY = document.documentElement.clientHeight * .5;
-			mainScaleByX = (document.documentElement.clientHeight / document.documentElement.clientWidth) / 2; // the formula to let playable be responsive to almost every screen size:
-			mainScaleByY = (document.documentElement.clientWidth / document.documentElement.clientHeight) / 2; // we taking the screen ratio divided by 2
+			mainScaleByX = (document.documentElement.clientHeight / document.documentElement.clientWidth) / 1.5; // the formula to let playable be responsive to almost every screen size: we taking the screen ratio divided by 1.5 if the height is more than width
+			mainScaleByY = (document.documentElement.clientWidth / document.documentElement.clientHeight) / 2; // and by 2 if width more than height
 			if ((document.documentElement.clientHeight / document.documentElement.clientWidth) > 2) {
-				mainScaleByX = (document.documentElement.clientHeight / document.documentElement.clientWidth) / 3; // and by 3, if the ratio is more than 2
+				mainScaleByX = (document.documentElement.clientHeight / document.documentElement.clientWidth) / 2; // also by 2, if the height/width ratio is more than 2
 			} else if ((document.documentElement.clientWidth / document.documentElement.clientHeight) > 2) {
-				mainScaleByY = (document.documentElement.clientWidth / document.documentElement.clientHeight) / 3; // and by 3, if the ratio is more than 2
+				mainScaleByY = (document.documentElement.clientWidth / document.documentElement.clientHeight) / 3; // and by 3, if the width/height ratio is more than 2
 			} else if ((document.documentElement.clientWidth / document.documentElement.clientHeight) == 1) {
 				mainScaleByX = document.documentElement.clientHeight / document.documentElement.clientWidth; // but if somehow the screen ratio is 1:1
 				mainScaleByY = document.documentElement.clientWidth / document.documentElement.clientHeight; // the playable size will be the strict 1 as it is.				
@@ -6226,7 +6226,7 @@ if (reversed == null) { reversed = false; }
 			}
 		});
 		var startbtnBaseY = startbtn.y;
-		var startbtnTargetY = document.documentElement.clientHeight * .85;
+		var startbtnTargetY = document.documentElement.clientHeight * .25;
 		function showStartBtn() {
 			if (sCounter.alpha < 1) {
 				createjs.Tween.get(sCounter).to({alpha:1}, 650, createjs.Ease.cubicOut);
