@@ -6606,6 +6606,8 @@ if (reversed == null) { reversed = false; }
 		}
 		function fillSkills2() {
 			if (isTraining) {
+				console.log(s2_run.currentFrame);
+				console.log(s2_box.currentFrame);
 				if (s2_run.currentFrame > 90 && s2_speed.currentFrame <= 1) {
 					s2_speed.gotoAndPlay(1);
 					s2card.gotoAndPlay(1);
