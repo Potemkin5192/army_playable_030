@@ -6370,6 +6370,9 @@ if (reversed == null) { reversed = false; }
 		window.addEventListener('endBox1Training', function () {
 			openCard1();
 			s1_box.visible = false;
+			if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
+				createjs.Tween.get(main).to({x:centerX}, 725, createjs.Ease.cubicInOut);
+			}
 		});
 		window.addEventListener('endRun1Training', function () {
 			console.log('soldier_deserted');
@@ -6403,6 +6406,9 @@ if (reversed == null) { reversed = false; }
 		window.addEventListener('endBoxTraining', function () {
 			openCard2();
 			s2_box.visible = false;
+			if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
+				createjs.Tween.get(main).to({x:centerX}, 725, createjs.Ease.cubicInOut);
+			}
 		});
 		window.addEventListener('endRunTraining', function () {
 			openCard2();
