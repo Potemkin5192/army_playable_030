@@ -5625,28 +5625,29 @@ if (reversed == null) { reversed = false; }
 	this.playnow.name = "playnow";
 	this.playnow.setTransform(-0.35,434.15,1,1,0,0,0,-0.1,-0.5);
 	this.playnow.alpha = 0;
-	this.timeline.addTween(cjs.Tween.get(this.playnow).wait(105).to({y:128.25,alpha:1},30,cjs.Ease.backOut).wait(2).to({y:434.15,alpha:0},0).wait(7).to({y:128.25,alpha:1},30,cjs.Ease.backOut).wait(5));
+	this.timeline.addTween(cjs.Tween.get(this.playnow).wait(105).to({x:3.55,y:244.5,alpha:1},30,cjs.Ease.backOut).wait(2).to({x:-0.35,y:434.15,alpha:0},0).wait(7).to({x:3.55,y:244.5,alpha:1},30,cjs.Ease.backOut).wait(5));
 	// phone
 	this.instance = new lib.phone();
 	this.instance.setTransform(-830.9,-103.8,1.4457,1.4457);
 	this.instance._off = true;
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(99).to({_off:false},0).to({scaleX:1.0431,scaleY:1.0431,x:-255.9,y:-176.7},33,cjs.Ease.cubicOut).to({_off:true},5).wait(3).to({_off:false,scaleX:1.4457,scaleY:1.4457,x:-830.9,y:-103.8},0).to({scaleX:1.0431,scaleY:1.0431,x:-255.9,y:-176.7},33,cjs.Ease.cubicOut).wait(6));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(99).to({_off:false},0).to({regX:-0.1,regY:-0.1,scaleX:0.9352,scaleY:0.9352,x:-225.95,y:-60.55},33,cjs.Ease.cubicOut).to({_off:true},5).wait(3).to({_off:false,regX:0,regY:0,scaleX:1.4457,scaleY:1.4457,x:-830.9,y:-103.8},0).to({regX:-0.1,regY:-0.1,scaleX:0.9352,scaleY:0.9352,x:-225.95,y:-60.55},33,cjs.Ease.cubicOut).wait(6));
 	// packshot
 	this.instance_1 = new lib.game_name();
-	this.instance_1.setTransform(-230.6,-157.1);
+	this.instance_1.setTransform(-203.15,-42.9,0.8965,0.8965);
 	this.instance_1.alpha = 0;
 	this.instance_1._off = true;
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(105).to({_off:false},0).to({scaleX:1.332,scaleY:1.332,x:174.65,y:-159.5,alpha:1},30,cjs.Ease.cubicOut).to({_off:true},2).wait(9).to({_off:false,scaleX:1,scaleY:1,x:-230.6,y:-157.1,alpha:0},0).to({scaleX:1.332,scaleY:1.332,x:174.65,y:-159.5,alpha:1},30,cjs.Ease.cubicOut).wait(3));
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(105).to({_off:false},0).to({scaleX:1.1942,scaleY:1.1942,x:160.1,y:-45.05,alpha:1},30,cjs.Ease.cubicOut).to({_off:true},2).wait(9).to({_off:false,scaleX:0.8965,scaleY:0.8965,x:-203.15,y:-42.9,alpha:0},0).to({scaleX:1.1942,scaleY:1.1942,x:160.1,y:-45.05,alpha:1},30,cjs.Ease.cubicOut).wait(3));
 	// success_text
 	this.instance_2 = new lib.success_text();
-	this.instance_2.setTransform(0.6,0.3,0.0907,0.0907);
+	this.instance_2.setTransform(0.7,2.65,0.072,0.072,0,0,0,0.7,0);
 	this.instance_2._off = true;
-	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(3).to({_off:false},0).to({scaleX:1,scaleY:1},18,cjs.Ease.quadInOut).wait(65).to({alpha:0.0586},21,cjs.Ease.quadInOut).to({_off:true},1).wait(71));
+	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(3).to({_off:false},0).to({regX:0,scaleX:0.7941,scaleY:0.7941,x:0.65,y:29.6},18,cjs.Ease.quadInOut).wait(65).to({alpha:0.0586},21,cjs.Ease.quadInOut).to({_off:true},1).wait(71));
 	// solid_green
 	this.instance_3 = new lib.solid2();
+	this.instance_3.setTransform(0,-1.45,1.3367,1.3367);
 	this.instance_3.alpha = 0.0586;
 	this.instance_3._off = true;
-	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(1).to({_off:false},0).to({scaleX:1.3106,scaleY:1.3106,alpha:1},18,cjs.Ease.cubicOut).wait(62).to({alpha:0.0586},24,cjs.Ease.quadInOut).to({_off:true},1).wait(73));
+	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(1).to({_off:false},0).to({scaleX:1.7519,scaleY:1.7519,alpha:1},18,cjs.Ease.cubicOut).wait(62).to({alpha:0.0586},24,cjs.Ease.quadInOut).to({_off:true},1).wait(73));
 	// baseimg
 	this.instance_4 = new lib.baseimg();
 	this.instance_4.setTransform(0,0,1.9787,1.9787);
@@ -5685,7 +5686,7 @@ if (reversed == null) { reversed = false; }
 		this.stop();
 	}
 	this.frame_49 = function() {
-		window.dispatchEvent(new Event('gameEndSuccess'))
+		window.dispatchEvent(new Event('victory'))
 	}
 	this.frame_62 = function() {
 		this.stop();
@@ -5934,11 +5935,12 @@ if (reversed == null) { reversed = false; }
 			} else if (soldierCount == 2) {
 				sCounter.gotoAndStop(2);
 				car.gotoAndStop(3);
+				car.gotoAndPlay(4);
 			}
 			console.log('soldierAddedToCar');
 		})
-		window.addEventListener('victory', function(){
-			///main.gotoAndPlay(1);
+		window.addEventListener('victory', function () {
+			packshot.gotoAndPlay(1);
 		})
 		createjs.Ticker.addEventListener('tick', visibilityChangeHandler);
 		function visibilityChangeHandler() {
@@ -5948,7 +5950,7 @@ if (reversed == null) { reversed = false; }
 				unmuteSounds();
 			}
 		}
-		function muteAllSound() {	
+		function muteAllSound() {
 			musicBG.volume = 0;
 			btnSFX.volume = 0;
 			upgrade.volume = 0;
@@ -6028,9 +6030,6 @@ if (reversed == null) { reversed = false; }
 			centerY = document.documentElement.clientHeight * .5;
 			mainScaleByX = (document.documentElement.clientHeight / document.documentElement.clientWidth) / 1.5; // the formula to let playable be responsive to almost every screen size: we taking the screen ratio divided by 1.5 if the height is more than width
 			mainScaleByY = (document.documentElement.clientWidth / document.documentElement.clientHeight) / 2; // and by 2 if width more than height
-			/*if ((document.documentElement.clientHeight / document.documentElement.clientWidth) > 2) {
-				mainScaleByX = (document.documentElement.clientHeight / document.documentElement.clientWidth) / 2; // also by 2, if the height/width ratio is more than 2
-			} else*/
 			if ((document.documentElement.clientWidth / document.documentElement.clientHeight) > 2) {
 				mainScaleByY = (document.documentElement.clientWidth / document.documentElement.clientHeight) / 3; // and by 3, if the width/height ratio is more than 2
 			} else if ((document.documentElement.clientWidth / document.documentElement.clientHeight) == 1) {
@@ -6042,7 +6041,7 @@ if (reversed == null) { reversed = false; }
 				startbtn.setTransform(centerX, centerY * 3, mainScaleByX, mainScaleByX);
 				startbtn2.setTransform(centerX, centerY * 3, mainScaleByX, mainScaleByX);
 				packshot.setTransform(centerX, centerY, mainScaleByX, mainScaleByX);
-				sCounter.setTransform(centerX, 0, mainScaleByX* 2, mainScaleByX* 2);
+				sCounter.setTransform(centerX, 0, mainScaleByX * 2, mainScaleByX * 2);
 				console.log(mainScaleByX);
 			}
 			if (document.documentElement.clientWidth > document.documentElement.clientHeight || document.documentElement.clientWidth == document.documentElement.clientHeight) {
@@ -6071,7 +6070,7 @@ if (reversed == null) { reversed = false; }
 		sCounter.alpha = 0;
 		s1infobtn.addEventListener('click', openCard1);
 		s1cardclose.addEventListener('click', closeCard1);
-		var cardscaleLow = s1card.scaleX *.1;
+		var cardscaleLow = s1card.scaleX * .1;
 		var cardstartScaleX = s1card.scaleX;
 		s2infobtn.addEventListener('click', openCard2);
 		s2cardclose.addEventListener('click', closeCard2);
@@ -6090,11 +6089,22 @@ if (reversed == null) { reversed = false; }
 			soldier2.visible = true;
 			if (!isTraining) {
 				s1card.arrow_close.visible = false;
-					if (s1card.alpha >= 1) {
-					createjs.Tween.get(s1card).to({alpha:0, scaleX: cardscaleLow}, 400, createjs.Ease.cubicOut).call(switches1Unclickable).call(showStartBtn);
+				if (s1card.alpha >= 1) {
+					createjs.Tween.get(s1card)
+						.to({
+							alpha: 0,
+							scaleX: cardscaleLow
+						}, 400, createjs.Ease.cubicOut)
+						.call(switches1Unclickable)
+						.call(showStartBtn);
 				}
 			} else if (isTraining) {
-				createjs.Tween.get(s1card).to({alpha:0, scaleX: cardscaleLow}, 400, createjs.Ease.cubicOut).call(startTrainingAnim);
+				createjs.Tween.get(s1card)
+					.to({
+						alpha: 0,
+						scaleX: cardscaleLow
+					}, 400, createjs.Ease.cubicOut)
+					.call(startTrainingAnim);
 			}
 		}
 		function openCard1() {
@@ -6109,9 +6119,14 @@ if (reversed == null) { reversed = false; }
 					}
 					soldier2.visible = false;
 					s1card.scaleX = cardscaleLow;
-					createjs.Tween.get(s1card).to({alpha:1, scaleX: cardstartScaleX}, 400, createjs.Ease.cubicOut).call(switches1Clickable);
+					createjs.Tween.get(s1card)
+						.to({
+							alpha: 1,
+							scaleX: cardstartScaleX
+						}, 400, createjs.Ease.cubicOut)
+						.call(switches1Clickable);
 				}
-			}	
+			}
 		}
 		function openCard2() {
 			if (s2infobtn.clickable) {
@@ -6124,18 +6139,34 @@ if (reversed == null) { reversed = false; }
 						}
 					}
 					s2card.scaleX = cardscaleLow;
-					createjs.Tween.get(s2card).to({alpha:1, scaleX: cardstartScaleX}, 400, createjs.Ease.cubicOut).call(switches2Clickable);
+					createjs.Tween.get(s2card)
+						.to({
+							alpha: 1,
+							scaleX: cardstartScaleX
+						}, 400, createjs.Ease.cubicOut)
+						.call(switches2Clickable);
 				}
 			}
 		}
 		function closeCard2() {
 			if (!isTraining) {
 				s2card.arrow_close.visible = false;
-					if (s2card.alpha >= 1) {
-					createjs.Tween.get(s2card).to({alpha:0, scaleX: cardscaleLow}, 400, createjs.Ease.cubicOut).call(switches2Unclickable).call(showStartBtn2);
+				if (s2card.alpha >= 1) {
+					createjs.Tween.get(s2card)
+						.to({
+							alpha: 0,
+							scaleX: cardscaleLow
+						}, 400, createjs.Ease.cubicOut)
+						.call(switches2Unclickable)
+						.call(showStartBtn2);
 				}
 			} else if (isTraining) {
-				createjs.Tween.get(s2card).to({alpha:0, scaleX: cardscaleLow}, 400, createjs.Ease.cubicOut).call(startTraining2Anim);
+				createjs.Tween.get(s2card)
+					.to({
+						alpha: 0,
+						scaleX: cardscaleLow
+					}, 400, createjs.Ease.cubicOut)
+					.call(startTraining2Anim);
 			}
 		}
 		function switches1Clickable() {
@@ -6190,52 +6221,64 @@ if (reversed == null) { reversed = false; }
 			s2_run_switch.clickable = false;
 			s2_shoot_switch.clickable = false;
 		}
-		s1_box_switch.addEventListener('click', function (){
+		s1_box_switch.addEventListener('click', function () {
 			if (s1_box_switch.clickable) {
 				s1card.arrow_close.visible = true;
-				s1_box_switch.gotoAndStop(s1_box_switch.currentFrame+1);
+				s1_box_switch.gotoAndStop(s1_box_switch.currentFrame + 1);
 			}
 		});
-		s1_run_switch.addEventListener('click', function (){
+		s1_run_switch.addEventListener('click', function () {
 			if (s1_run_switch.clickable) {
 				s1card.arrow_close.visible = true;
-				s1_run_switch.gotoAndStop(s1_run_switch.currentFrame+1);
+				s1_run_switch.gotoAndStop(s1_run_switch.currentFrame + 1);
 			}
 		});
-		s1_shoot_switch.addEventListener('click', function (){
+		s1_shoot_switch.addEventListener('click', function () {
 			if (s1_shoot_switch.clickable) {
 				s1card.arrow_close.visible = true;
-				s1_shoot_switch.gotoAndStop(s1_shoot_switch.currentFrame+1);
+				s1_shoot_switch.gotoAndStop(s1_shoot_switch.currentFrame + 1);
 			}
 		});
-		s2_box_switch.addEventListener('click', function (){
+		s2_box_switch.addEventListener('click', function () {
 			if (s2_box_switch.clickable) {
 				s2card.arrow_close.visible = true;
-				s2_box_switch.gotoAndStop(s2_box_switch.currentFrame+1);
+				s2_box_switch.gotoAndStop(s2_box_switch.currentFrame + 1);
 			}
 		});
-		s2_run_switch.addEventListener('click', function (){
+		s2_run_switch.addEventListener('click', function () {
 			if (s2_run_switch.clickable) {
 				s2card.arrow_close.visible = true;
-				s2_run_switch.gotoAndStop(s2_run_switch.currentFrame+1);
+				s2_run_switch.gotoAndStop(s2_run_switch.currentFrame + 1);
 			}
 		});
-		s2_shoot_switch.addEventListener('click', function (){
+		s2_shoot_switch.addEventListener('click', function () {
 			if (s2_shoot_switch.clickable) {
 				s2card.arrow_close.visible = true;
-				s2_shoot_switch.gotoAndStop(s2_shoot_switch.currentFrame+1);
+				s2_shoot_switch.gotoAndStop(s2_shoot_switch.currentFrame + 1);
 			}
 		});
 		var startbtnBaseY = startbtn.y;
 		var startbtnTargetY = document.documentElement.clientHeight * .85;
 		function showStartBtn() {
 			if (sCounter.alpha < 1) {
-				createjs.Tween.get(sCounter).to({alpha:1}, 650, createjs.Ease.cubicOut);
+				createjs.Tween.get(sCounter)
+					.to({
+						alpha: 1
+					}, 650, createjs.Ease.cubicOut);
 			}
-			createjs.Tween.get(startbtn).to({alpha:1, y: startbtnTargetY}, 675, createjs.Ease.backOut).call(startbtnclickable);
+			createjs.Tween.get(startbtn)
+				.to({
+					alpha: 1,
+					y: startbtnTargetY
+				}, 675, createjs.Ease.backOut)
+				.call(startbtnclickable);
 		}
 		function hideStartBtn() {
-			createjs.Tween.get(startbtn).to({alpha:0, y: startbtnBaseY}, 675, createjs.Ease.backIn);
+			createjs.Tween.get(startbtn)
+				.to({
+					alpha: 0,
+					y: startbtnBaseY
+				}, 675, createjs.Ease.backIn);
 		}
 		function startbtnclickable() {
 			startbtn.clickable = true;
@@ -6276,7 +6319,10 @@ if (reversed == null) { reversed = false; }
 				s1_box.visible = true;
 				s1_box.gotoAndPlay(1);
 				if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
-					createjs.Tween.get(main).to({x:centerX+centerX/2}, 725, createjs.Ease.cubicInOut);
+					createjs.Tween.get(main)
+						.to({
+							x: centerX + centerX / 2
+						}, 725, createjs.Ease.cubicInOut);
 				}
 			} else if (isRunTrainingOn) {
 				s1_waving.visible = false;
@@ -6289,15 +6335,27 @@ if (reversed == null) { reversed = false; }
 				s1_shoot.visible = true;
 				s1_shoot.gotoAndPlay(1);
 				if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
-					createjs.Tween.get(main).to({x:centerX-centerX/2}, 725, createjs.Ease.cubicInOut);
+					createjs.Tween.get(main)
+						.to({
+							x: centerX - centerX / 2
+						}, 725, createjs.Ease.cubicInOut);
 				}
 			}
 		}
 		function showStartBtn2() {
-			createjs.Tween.get(startbtn2).to({alpha:1, y: startbtnTargetY}, 675, createjs.Ease.backOut).call(startbtn2clickable);
+			createjs.Tween.get(startbtn2)
+				.to({
+					alpha: 1,
+					y: startbtnTargetY
+				}, 675, createjs.Ease.backOut)
+				.call(startbtn2clickable);
 		}
 		function hideStartBtn2() {
-			createjs.Tween.get(startbtn2).to({alpha:0, y: startbtnBaseY}, 675, createjs.Ease.backIn);
+			createjs.Tween.get(startbtn2)
+				.to({
+					alpha: 0,
+					y: startbtnBaseY
+				}, 675, createjs.Ease.backIn);
 		}
 		function startbtn2clickable() {
 			startbtn2.clickable = true;
@@ -6343,7 +6401,10 @@ if (reversed == null) { reversed = false; }
 				s2_shoot.visible = true;
 				s2_shoot.gotoAndPlay(1);
 				if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
-					createjs.Tween.get(main).to({x:centerX-centerX/2}, 725, createjs.Ease.cubicInOut);
+					createjs.Tween.get(main)
+						.to({
+							x: centerX - centerX / 2
+						}, 725, createjs.Ease.cubicInOut);
 				}
 			} else if (isBox2TrainingOn) {
 				s2_waving.visible = false;
@@ -6351,7 +6412,10 @@ if (reversed == null) { reversed = false; }
 				s2_box.visible = true;
 				s2_box.gotoAndPlay(1);
 				if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
-					createjs.Tween.get(main).to({x:centerX+centerX/2}, 725, createjs.Ease.cubicInOut);
+					createjs.Tween.get(main)
+						.to({
+							x: centerX + centerX / 2
+						}, 725, createjs.Ease.cubicInOut);
 				}
 			}
 		}
@@ -6364,14 +6428,20 @@ if (reversed == null) { reversed = false; }
 		window.addEventListener('stopShooting1Training', function () {
 			openCard1();
 			if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
-				createjs.Tween.get(main).to({x:centerX}, 725, createjs.Ease.cubicInOut);
+				createjs.Tween.get(main)
+					.to({
+						x: centerX
+					}, 725, createjs.Ease.cubicInOut);
 			}
 		});
 		window.addEventListener('endBox1Training', function () {
 			openCard1();
 			s1_box.visible = false;
 			if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
-				createjs.Tween.get(main).to({x:centerX}, 725, createjs.Ease.cubicInOut);
+				createjs.Tween.get(main)
+					.to({
+						x: centerX
+					}, 725, createjs.Ease.cubicInOut);
 			}
 		});
 		window.addEventListener('endRun1Training', function () {
@@ -6379,35 +6449,57 @@ if (reversed == null) { reversed = false; }
 			deserted_text.play();
 			isTraining = false;
 			s2infobtn.clickable = true;
-			createjs.Tween.get(soldier1).to({alpha:0, visible:false}, 450, createjs.Ease.cubicIn);
+			createjs.Tween.get(soldier1)
+				.to({
+					alpha: 0,
+					visible: false
+				}, 450, createjs.Ease.cubicIn);
 			s1_shoot.gotoAndStop(0);
 			deserted++;
 		});
 		window.addEventListener('stopShootingTraining', function () {
 			console.log('soldier_deserted');
 			if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
-				createjs.Tween.get(main).to({x:centerX}, 725, createjs.Ease.cubicInOut);
+				createjs.Tween.get(main)
+					.to({
+						x: centerX
+					}, 725, createjs.Ease.cubicInOut);
 			}
 			deserted_text.play();
 			isTraining = false;
 			s1infobtn.clickable = true;
-			createjs.Tween.get(soldier2).to({alpha:0, visible:false}, 450, createjs.Ease.cubicIn);
+			createjs.Tween.get(soldier2)
+				.to({
+					alpha: 0,
+					visible: false
+				}, 450, createjs.Ease.cubicIn);
 			s1_box.gotoAndStop(0);
 			deserted++;
 		});
-		window.addEventListener('both_deserted', function (){
+		window.addEventListener('both_deserted', function () {
 			if (deserted >= 2) {
 				packshot.gotoAndPlay(137)
+				createjs.Tween.get(sCounter)
+					.to({
+						alpha: 0
+					}, 650, createjs.Ease.cubicOut);
 			}
 			if (deserted == 1 && car.currentFrame != 0) {
 				packshot.gotoAndPlay(137)
+				createjs.Tween.get(sCounter)
+					.to({
+						alpha: 0
+					}, 650, createjs.Ease.cubicOut);
 			}
 		})
 		window.addEventListener('endBoxTraining', function () {
 			openCard2();
 			s2_box.visible = false;
 			if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
-				createjs.Tween.get(main).to({x:centerX}, 725, createjs.Ease.cubicInOut);
+				createjs.Tween.get(main)
+					.to({
+						x: centerX
+					}, 725, createjs.Ease.cubicInOut);
 			}
 		});
 		window.addEventListener('endRunTraining', function () {
@@ -6453,14 +6545,22 @@ if (reversed == null) { reversed = false; }
 				s2infobtn.clickable = true;
 			}
 			soldier2.visible = true;
-			createjs.Tween.get(s1card).to({alpha:0, scaleX: cardscaleLow}, 400, createjs.Ease.cubicIn);
+			createjs.Tween.get(s1card)
+				.to({
+					alpha: 0,
+					scaleX: cardscaleLow
+				}, 400, createjs.Ease.cubicIn);
 		}
 		function closeCard2Finally() {
 			if (s1card.currentFrame < 20) {
 				s1infobtn.clickable = true;
 			}
 			soldier1.visible = true;
-			createjs.Tween.get(s2card).to({alpha:0, scaleX: cardscaleLow}, 400, createjs.Ease.cubicIn);
+			createjs.Tween.get(s2card)
+				.to({
+					alpha: 0,
+					scaleX: cardscaleLow
+				}, 400, createjs.Ease.cubicIn);
 		}
 		createjs.Ticker.addEventListener('tick', checkSwitches);
 		function checkSwitches() {
@@ -6498,11 +6598,11 @@ if (reversed == null) { reversed = false; }
 	}
 	// actions tween:
 	this.timeline.addTween(cjs.Tween.get(this).wait(1).call(this.frame_1).wait(1));
-	// s_counter
-	this.s_counter = new lib.counter();
-	this.s_counter.name = "s_counter";
-	this.s_counter.setTransform(540.45,-1.35,3.3283,3.3283,0,0,0,0.1,0);
-	this.timeline.addTween(cjs.Tween.get(this.s_counter).wait(2));
+	// packshot
+	this.packshot = new lib.packshot();
+	this.packshot.name = "packshot";
+	this.packshot.setTransform(540,944.2);
+	this.timeline.addTween(cjs.Tween.get(this.packshot).wait(2));
 	// start_btn_copy
 	this.startbtn2 = new lib.start_training_btn();
 	this.startbtn2.name = "startbtn2";
@@ -6513,11 +6613,11 @@ if (reversed == null) { reversed = false; }
 	this.startbtn.name = "startbtn";
 	this.startbtn.setTransform(540,1452);
 	this.timeline.addTween(cjs.Tween.get(this.startbtn).wait(2));
-	// packshot
-	this.packshot = new lib.packshot();
-	this.packshot.name = "packshot";
-	this.packshot.setTransform(540,944.2);
-	this.timeline.addTween(cjs.Tween.get(this.packshot).wait(2));
+	// s_counter
+	this.s_counter = new lib.counter();
+	this.s_counter.name = "s_counter";
+	this.s_counter.setTransform(540.45,-1.35,3.3283,3.3283,0,0,0,0.1,0);
+	this.timeline.addTween(cjs.Tween.get(this.s_counter).wait(2));
 	// main
 	this.main = new lib.main();
 	this.main.name = "main";
@@ -6543,8 +6643,8 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"index_atlas_P_1.png?1694097002982", id:"index_atlas_P_1"},
-		{src:"index_atlas_NP_1.jpg?1694097002983", id:"index_atlas_NP_1"}
+		{src:"index_atlas_P_1.png?1694162087911", id:"index_atlas_P_1"},
+		{src:"index_atlas_NP_1.jpg?1694162087911", id:"index_atlas_NP_1"}
 	],
 	preloads: []
 };
